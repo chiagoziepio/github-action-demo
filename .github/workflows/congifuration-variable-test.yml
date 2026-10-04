@@ -1,0 +1,16 @@
+name: Configuration variable explore
+
+on:
+  workflow_dispatch:
+env:
+  Foodname: jollof rice
+jobs:
+  cooking:
+    runs-on: ubuntu-latest
+    env:
+      Cook: john
+    steps:
+      - name: start cooking
+        run: echo $Cook is cooking $Foodname founder by ${{vars.FOODCRONNER}}
+  
+  
