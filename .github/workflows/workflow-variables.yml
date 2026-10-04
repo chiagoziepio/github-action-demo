@@ -14,5 +14,5 @@ jobs:
       - name: say the dance name
         run:  echo $dancer_name you are dancing $Dance and it is so $Dummy
         env:
-          Dancer_name : Okoro
+          Dancer_name: Okoro
   
