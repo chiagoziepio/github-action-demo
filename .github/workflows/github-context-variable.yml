@@ -1,0 +1,23 @@
+name: Github context variable
+
+on: 
+  workflow_dispatch: 
+
+env:
+  RepoOwner : ${{github.repository_owner}}
+  Mood: happy
+
+jobs:
+  testing-github-context:
+    runs-on: ubuntu-latest
+    env:
+      GithubContextRepoName: ${{github.repository}}
+    steps:
+      - name: dump all github context
+        run: 
+          echo this action which is ${{github.action}} ran
+          echo it was triggered by ${{github.actor}} with the id ${{github.actor_id}}
+          echo The owner of this repo which $GithubContextRepoName is $RepoOwner
+          echo we are $Mood to have you
+          
+  
