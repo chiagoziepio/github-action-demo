@@ -1,0 +1,18 @@
+name: Checking workflow variables
+
+on:
+  workflow_dispatch:
+
+env:
+  Dummy: this-dummy
+jobs:
+  how_dances_job:
+    runs-on: ubuntu-latest
+    env:
+      Dance: skelewu
+    steps:
+      - name: say the dance name
+        run:  echo $dancer_name you are dancing $Dance and it is so $Dummy
+        env:
+          Dancer_name : Okoro
+  
