@@ -23,5 +23,5 @@ jobs:
         run :  echo "::set-ouput name=addition::$((${{inputs.firts_num}} + ${{inputs.second_num}}))"
 
       - name: print sum
-        run: echo "The sum of ${{inputs.firts_num}} and ${{inputs.second_num}} is ${{steps.sum.outputs.addition}}
+        run: echo "The sum of ${{inputs.firts_num}} and ${{inputs.second_num}} is ${{steps.sum.outputs.addition}}"
   
