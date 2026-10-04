@@ -12,7 +12,7 @@ jobs:
       Dance: skelewu
     steps:
       - name: say the dance name
-        run:  echo $dancer_name you are dancing $Dance and it is so $Dummy
+        run:  echo $Dancer_name you are dancing $Dance and it is so $Dummy
         env:
           Dancer_name: Okoro
   
