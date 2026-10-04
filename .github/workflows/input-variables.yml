@@ -1,0 +1,27 @@
+name: input variable on manually triggered actions
+
+on:
+  workflow_dispatch:
+    inputs:
+      firts_num:
+        description: this first number to be provided
+        default: "1"
+        required: true
+      second_num:
+        description:  second nummber to be provided
+        default: "2"
+        required: true
+
+jobs:
+  printing-input-variables:
+    runs-on: ubuntu-latest
+    env:
+      Time: 12pm
+    steps:
+      - name: Add number
+        id: sum
+        run :  echo "::set-ouput name=addition::$((${{inputs.firts_num}} + ${{inputs.second_num}}))"
+
+      - name: print sum
+        run: echo "The sum of ${{inputs.firts_num}} and ${{inputs.second_num}} is ${{steps.sum.outputs.addition}}
+  
